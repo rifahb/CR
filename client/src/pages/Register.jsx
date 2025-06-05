@@ -8,6 +8,7 @@ export default function Register() {
   const [dob, setDob] = useState("");
   const [email, setEmail] = useState("");
   const [role, setRole] = useState("");
+  const [userClass, setUserClass] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
   const navigate = useNavigate();
@@ -17,13 +18,13 @@ export default function Register() {
   setError("");
   setSuccess(false);
 
-  if (!name || !usn || !dob || !email || !role) {
+  if (!name || !usn || !dob || !email || !role || !userClass) {
     return setError("All fields are required.");
   }
 
   try {
     const res = await axios.post("http://localhost:5001/api/auth/register", {
-      name, usn, dob, email, role
+      name, usn, dob, email, role,class: userClass
     });
     setSuccess(true);
     setTimeout(() => navigate("/login"), 2000); // redirect after 2s
@@ -83,6 +84,16 @@ export default function Register() {
               <option value="student">Student</option>
               <option value="cr">CR</option>
               <option value="teacher">Teacher</option>
+            </select>
+            <select
+              value={userClass}
+              onChange={(e) => setUserClass(e.target.value)}
+              className="w-full px-4 py-2 rounded-lg bg-white/10 text-black border border-white/20 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            >
+              <option value="" disabled>Select Class</option>
+              <option value="CSE-A">CSE-A</option>
+             <option value="CSE-B">CSE-B</option>
+              <option value="CSE-C">CSE-C</option>
             </select>
 
             {error && <p className="text-red-400 text-sm">{error}</p>}
