@@ -78,8 +78,7 @@ export default function Register() {
             <select
               value={role}
               onChange={(e) => setRole(e.target.value)}
-              className="w-full px-4 py-2 rounded-lg bg-white/10 text-white border border-white/20 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            >
+                 className="w-full px-4 py-2 rounded-lg bg-white/10 text-white border border-white/20 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500">
               <option value="" disabled>Select Role</option>
               <option value="student">Student</option>
               <option value="cr">CR</option>
@@ -88,8 +87,7 @@ export default function Register() {
             <select
               value={userClass}
               onChange={(e) => setUserClass(e.target.value)}
-              className="w-full px-4 py-2 rounded-lg bg-white/10 text-black border border-white/20 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            >
+           className="w-full px-4 py-2 rounded-lg bg-white/10 text-white border border-white/20 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500">
               <option value="" disabled>Select Class</option>
               <option value="CSE-A">CSE-A</option>
              <option value="CSE-B">CSE-B</option>
